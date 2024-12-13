@@ -10,7 +10,7 @@ export const Resume = () => {
         const options = {
         //   margin: 0.5, 
           filename: "resume.pdf", 
-          html2canvas: { scale: 2 },
+          html2canvas: { scale: 5 },
           jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
         };
     
