@@ -26,9 +26,9 @@ export const Resume = () => {
                     <div className=" flex justify-evenly w-[auto] mx-auto text-[15px] font-normal  ">
                         <p>skjsaurav1@gmail.com  </p>
                         <p className="flex items-center ml-[-10px] "><LuDot className="text-2xl font-bold" /> +91 9934787172</p>
-                        <a href="https://github.com/saurav-kumar-jha" className="flex items-center ml-[-5px] underline "><LuDot className="text-2xl font-bold " /> https://github.com/saurav-kumar-jha   </a>
+                        <a href="https://github.com/saurav-kumar-jha" className="flex items-center ml-[-5px] "><LuDot className="text-2xl font-bold " /> https://github.com/saurav-kumar-jha   </a>
                     </div>
-                    <a className="text-center text-[16px] underline flex justify-center " href="link">https://www.linkedin.com/in/saurav-kumar-jha</a>
+                    <a className="text-center text-[16px] flex justify-center " href="link">https://www.linkedin.com/in/saurav-kumar-jha</a>
                 </div>
 
                 <hr className="h-[2px] w-[100%] bg-gray-500 my-2 " />
@@ -74,10 +74,10 @@ export const Resume = () => {
 
                 <hr className="h-[2px] w-[100%] bg-gray-500 my-2 " />
                 <div className="h-auto w-[100%] ">
-                    <h1 className="text-2xl uppercase font-semibold ">Projects</h1>
+                    <h1 className="text-2xl uppercase font-semibold my-[-2px] ">Projects</h1>
                     <div className="w-[97%] h-auto mx-auto my-2 ">
                         <div className="flex justify-between items-center">
-                            <h2 className="text-lg font-semibold flex items-center gap-2 ">Resume Maker <a href="#" className="h-auto w-fit text-xl mt-1 "><IoLinkSharp /></a> </h2>
+                            <h2 className="text-lg font-semibold flex items-center gap-2 ">Resume Maker <a href="https://resume-maker-five-omega.vercel.app/" className="h-auto w-fit text-xl mt-1 "><IoLinkSharp /></a> </h2>
                             <h2 className="text-lg font-semibold ">Dec 2024 - present</h2>
                         </div>
                         <div className="w-[95%] mx-auto ">
@@ -88,9 +88,10 @@ export const Resume = () => {
                             </ul>
                         </div>
                     </div>
+                    <hr className="h-[2px] w-[100%] bg-gray-500 my-2 " />
                     <div className="w-[97%] h-auto mx-auto my-2">
                         <div className="flex justify-between items-center">
-                            <h2 className="text-lg font-semibold flex items-center gap-2 ">Quiz App <a href="#" className="h-auto w-fit text-xl mt-1 "><IoLinkSharp /></a> </h2>
+                            <h2 className="text-lg font-semibold flex items-center gap-2 ">Quiz App <a href="https://github.com/saurav-kumar-jha/Quiz-App" className="h-auto w-fit text-xl mt-1 "><IoLinkSharp /></a> </h2>
                             <h2 className="text-lg font-semibold ">Nov 2024 - present</h2>
                         </div>
                         <div className="w-[95%] mx-auto ">
