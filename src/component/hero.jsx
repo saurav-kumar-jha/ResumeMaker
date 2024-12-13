@@ -1,9 +1,14 @@
 import { Bs1Circle, Bs2Circle, Bs3Circle, Bs4Circle } from "react-icons/bs"
 import { FcApproval, FcRating } from "react-icons/fc"
 import { Container } from "./container"
+import { useNavigate } from "react-router-dom"
 
 
 export const Hero = () => {
+    const navigate = useNavigate()
+    const handlecreate = ()=>{
+        navigate("/resume")
+    }
     return (
         <>
             <section className="h-auto w-[100vw] ">
@@ -14,7 +19,7 @@ export const Hero = () => {
                             <h2 className="text-lg font-medium mt-[15px] text-center ">Create a standout resume with our intuitive builder! Choose from sleek templates, customize effortlessly, and impress employers. Elevate your job search and land your dream job today!</h2>
                             <div className="flex items-center w-[100%] justify-center h-[50%] mt-5">
 
-                                <button className="button font-bold rounded-full text-xl ">Create resume</button>
+                                <button className="button font-bold rounded-full text-xl " onClick={handlecreate} >Create resume</button>
                             </div>
                         </div>
                         <div className="w-[50%] h-[100%] ml-4  ">
