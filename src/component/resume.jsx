@@ -1,23 +1,25 @@
 import { IoLinkSharp } from "react-icons/io5"
 import { LuDot } from "react-icons/lu"
 import html2pdf from "html2pdf.js";
+import { useState } from "react";
 
 export const Resume = () => {
+    const [loading, setloading] = useState(false)
 
     const generatePDF = () => {
+        setloading(true)
         const element = document.getElementById("resume-content");
-    
         const options = {
         //   margin: 0.5, 
           filename: "resume.pdf", 
           html2canvas: { scale: 5 },
           jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
         };
-    
         html2pdf().from(element).set(options).save(); 
+        setloading(false)
       };
 
-
+    //   if(loading) return <div id="loader"></div>
     return (
         <>
             <div className="h-[uto] w-[595px]  mx-auto px-3 py-4 " id="resume-content" >
@@ -105,7 +107,7 @@ export const Resume = () => {
                 </div>
                 <hr className="h-[2px] w-[100%] bg-gray-500 my-2 " />
             </div>
-            <button className="h-auto w-auto bg-slate-400 rounded-full border-transparent text-black font-semibold px-4 py-2 " onClick={generatePDF}>SUBMIT</button>
+            <button className="h-auto w-auto bg-slate-400 rounded-full border-transparent text-black font-semibold px-4 py-2 " onClick={generatePDF}>{loading ? "Generating PDF...":"SUBMIT"} </button>
         </>
     )
 }
