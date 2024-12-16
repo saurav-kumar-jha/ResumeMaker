@@ -4,6 +4,8 @@ import { Home } from './component/home'
 import { Login } from './component/login'
 import { Signup } from './component/singup'
 import { Resume } from './component/resume'
+import { Template } from './component/template'
+import { Fresher } from './component/fresher'
 
 const router = createBrowserRouter([
   {
@@ -20,7 +22,16 @@ const router = createBrowserRouter([
     {
       path: "/resume",
       element: <Resume />
-    }]
+    },
+  {
+    path:"/temp",
+    element:<Template/>
+  },
+  {
+    path:"/fresher",
+    element:<Fresher/>
+  }
+]
   } 
 ])
 

@@ -22,7 +22,7 @@ export const Resume = () => {
     //   if(loading) return <div id="loader"></div>
     return (
         <>
-            <div className="h-[uto] w-[595px]  mx-auto px-3 py-4 " id="resume-content" >
+            <div className="h-[auto] w-[595px]  mx-auto px-3 py-4 " id="resume-content" >
                 <div className="h-[auto] w-[100%] ">
                     <h1 className="font-bold text-3xl text-center uppercase ">SAURAV KUMAR JHA</h1>
                     <div className=" flex justify-evenly w-[auto] mx-auto text-[15px] font-normal  ">
@@ -83,10 +83,10 @@ export const Resume = () => {
                             <h2 className="text-lg font-semibold ">Dec 2024 - present</h2>
                         </div>
                         <div className="w-[95%] mx-auto ">
-                            <ul>
-                                <li className="flex items-center text-lg font-semibold"><LuDot /> Free to use.</li>
-                                <li className="flex items-center text-lg font-semibold"><LuDot /> Easy and efficient.</li>
-                                <li className="flex items-center text-lg font-semibold  "><LuDot /> Build a resume maker to make resume for fresher and experience.</li>
+                            <ul className="list-disc list-inside">
+                                <li className="text-base ml-1 font-semibold"> Free to use.</li>
+                                <li className="text-base ml-1 font-semibold"> Easy and efficient.</li>
+                                <li className="text-base ml-1 font-semibold  "> Build a resume maker to make resume for fresher and experience.</li>
                             </ul>
                         </div>
                     </div>
@@ -106,6 +106,19 @@ export const Resume = () => {
                     </div>
                 </div>
                 <hr className="h-[2px] w-[100%] bg-gray-500 my-2 " />
+                <div className="h-auto w-[100%] ">
+                    <h1 className="text-3xl uppercase font-semibold my-[-2px] ">Work experience</h1>
+                    <div className="w-[97%] h-auto mx-auto my-2 ">
+                        <div className="flex justify-between items-center">
+                            <h2 className="text-xl font-bold flex items-center gap-2 ">Resume Maker </h2>
+                            <h2 className="text-lg font-semibold ">Dec 2024 - present</h2>
+                        </div>
+                        <div className="w-[95%] mx-auto ">
+                            <p className="text-[16px] font-semibold ">At Tech Solutions, Inc., I was responsible for managing customer inquiries through phone, email, and live chat. My role required a high level of communication skills, as I worked directly with customers to resolve issues, provide technical support, and ensure satisfaction. I was able to develop strong problem-solving skills by troubleshooting technical issues alongside the engineering team. My ability to maintain a professional and empathetic tone helped me achieve a 98% customer satisfaction rate. In addition to resolving customer concerns, I assisted with processing returns and exchanges, ensuring all transactions were in line with company policies.</p>
+                        </div>
+                    </div>
+                    <hr className="h-[2px] w-[100%] bg-gray-500 my-2 " />
+                </div>
             </div>
             <button className="h-auto w-auto bg-slate-400 rounded-full border-transparent text-black font-semibold px-4 py-2 " onClick={generatePDF}>{loading ? "Generating PDF...":"SUBMIT"} </button>
         </>

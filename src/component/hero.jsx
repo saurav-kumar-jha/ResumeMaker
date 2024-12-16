@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 export const Hero = () => {
     const navigate = useNavigate()
     const handlecreate = ()=>{
-        navigate("/resume")
+        navigate("/temp")
     }
     return (
         <>
