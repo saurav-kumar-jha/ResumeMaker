@@ -247,7 +247,7 @@ export const Fresher = () => {
             {/* <Downbutton onClick={generatePDF} /> */}
             <div className="h-auto w-[600px] mx-auto my-5 ">
 
-            <button className="h-auto w-auto bg-slate-400 rounded-full border-transparent text-black font-semibold px-4 py-2 flex justify-center items-center " onClick={generatePDF}>{loading ? "Generating PDF..." : "SUBMIT"} </button>
+            <button className="h-auto w-auto bg-slate-400 rounded-full border-transparent text-black font-semibold px-4 py-2 flex justify-center items-center " onClick={generatePDF}>{loading ? "Generating PDF..." : "DOWNLOAD"} </button>
             </div>
             </div>
         </>

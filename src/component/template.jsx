@@ -6,6 +6,9 @@ export const Template = () => {
     const handlefresher = ()=>{
         navigate("/fresher")
     }
+    const handleExp = ()=>{
+        navigate("/exp")
+    }
     return (
         <>
             <div>
@@ -18,7 +21,7 @@ export const Template = () => {
                     <h4 className="text-2xl font-bold text-blue-600 ">Fresher Resume Template</h4>
                     <p className="text-base mt-[-5px] text-blue-400 ">No Experience No problem!</p>
                 </div>
-                <div className="text-center h-[90%] w-[38%]  ">
+                <div className="text-center h-[90%] w-[38%]  " onClick={handleExp}>
                     <img src="/ExpreinceResume1-CgXWjruW.png" alt="" className="h-[100%] w-full cursor-pointer " />
                     <h4 className="text-2xl font-bold text-blue-600 ">Experienced Template</h4>
                     <p className="text-base mt-[-5px] text-blue-400">Put your best foot forward with a professional resume template.</p>

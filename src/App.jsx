@@ -6,6 +6,7 @@ import { Signup } from './component/singup'
 import { Resume } from './component/resume'
 import { Template } from './component/template'
 import { Fresher } from './component/fresher'
+import { ExpResume } from './component/expresume/resume'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path:"/fresher",
     element:<Fresher/>
+  },
+  {
+    path:"/exp",
+    element:<ExpResume/>
   }
 ]
   } 
