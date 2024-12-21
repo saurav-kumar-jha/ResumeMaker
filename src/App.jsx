@@ -5,8 +5,8 @@ import { Login } from './component/login'
 import { Signup } from './component/singup'
 import { Resume } from './component/resume'
 import { Template } from './component/template'
-import { Fresher } from './component/fresher'
-import { ExpResume } from './component/expresume/resume'
+import { ExpInput } from './component/expresume/ExpresumePage'
+import { Fresher } from './component/fresherResume/fresher'
 
 const router = createBrowserRouter([
   {
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/exp",
-    element:<ExpResume/>
+    element:<ExpInput/>
   }
 ]
   } 

@@ -2,6 +2,8 @@ import { Outlet, useLocation } from "react-router-dom"
 import { Footer } from "./footer"
 import { Hero } from "./hero"
 import { Nav } from "./nav"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 export const Home = ()=>{
   const navigate = useLocation()
@@ -13,6 +15,7 @@ export const Home = ()=>{
                navigate.pathname == "/" ? <Hero/> :<Outlet/>
             }
             <Footer/>
+            <ToastContainer/>
           </section>
         </>
     )

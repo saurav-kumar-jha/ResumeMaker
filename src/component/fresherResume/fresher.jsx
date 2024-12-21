@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
-import { Skills } from "./fresherResume/skills"
-import { Education } from "./fresherResume/educationDetail"
-import { Projects } from "./fresherResume/project"
-import { Certificate } from "./fresherResume/certification"
-import { Social } from "./fresherResume/social"
-import { Profile } from "./fresherResume/profile"
+import { Skills } from "./skills"
+import { Education } from "./educationDetail"
+import { Projects } from "./project"
+import { Certificate } from "./certification"
+import { Social } from "./social"
+import { Profile } from "./profile"
 import { IoLinkSharp } from "react-icons/io5"
-import { About } from "./fresherResume/about"
+import { About } from "./about"
 import html2pdf from "html2pdf.js"
 import { NavLink } from "react-router-dom"
 
@@ -24,28 +24,6 @@ export const Fresher = () => {
     const [show, setshow] = useState(false)
     const [checkbox, setcheckbox] = useState(false)
     const [loading, setloading] = useState(false)
-
-    // useEffect(()=>{
-    //     const fetchData = async ()=>{
-    //         const res = await axios.get(data)
-    //         console.log(res.data)
-    //     }
-    //     fetchData()
-    // },[])
-
-    // const { toPDF, targetRef } = usePDF({filename: 'page.pdf'});
-    // const getTargetElement = () => document.getElementById('resume-content');
-    // const option = {
-    //     method:'open',
-    //     page:{
-    //         margin:Margin.MEDIUM,
-    //         format:'A4',
-    //         orientation:'portrait'
-    //     },
-    //     canvas: {
-    //        qualityRatio: 5
-    //     },
-    // }
 
     const generatePDF = () => {
         setloading(true)
@@ -68,11 +46,7 @@ export const Fresher = () => {
 
     const handlesubmit = (e) => {
         e.preventDefault()
-        const data = { info, cer, education, exp, skills, project, links }
-        // console.log(data);
-
         setshow(true)
-        console.log(checkbox)
     }
     return (
         <>
@@ -100,11 +74,6 @@ export const Fresher = () => {
                     <hr className="h-[3px] my-2 bg-black w-[100%] rounded " />
                     <Projects project={project} setProject={setProject} />
 
-
-
-                    {/* <hr className="h-[3px] my-2 bg-black w-[100%] rounded " />
-                    <p className="font-medium text-sm mb-[-20px] ml-[30px] ">if u don't have any experience then remove the experience section.</p>
-                    <Experience Exp={exp} setExp={setexp} checkbox={checkbox} /> */}
 
                     <hr className="h-[3px] my-2 bg-black w-[100%] rounded " />
                     <Certificate cer={cer} setcer={setcer} />
@@ -201,32 +170,7 @@ export const Fresher = () => {
                     </div>
                     <hr className="h-[2px] w-[100%] bg-gray-500 my-2 " />
 
-                    {/* work experience....................................... */}
-
-
-
-                    {/* <div className={`h-auto w-[100%] ${checkbox ? "hidden" : "block"} `} >
-                    <h1 className="text-2xl uppercase font-semibold my-[-2px] ">Work experience:</h1>
-                    {
-                        exp.map((item, index) => (
-                            <div key={index} className="w-[97%] h-auto mx-auto my-2 ">
-                                <div className="flex justify-between items-center">
-                                    <h2 className="text-xl font-bold flex items-center gap-2 "> {item.position} |{item.name}</h2>
-                                    <h2 className="text-lg font-semibold ">{item.year} </h2>
-                                </div>
-                                <div className="w-[95%] mx-auto ">
-                                    <p className="text-[16px] font-semibold ">{item.des}</p>
-                                </div>
-                            </div>
-                        ))
-                    }
-
-                    <hr className="h-[2px] w-[100%] bg-gray-500 my-2 " />
-                </div> */}
-
                     {/* certification section ...................................... */}
-
-
 
                     <div className="h-auto w-[100%] ">
                         <h1 className="text-2xl uppercase font-semibold my-[auto] ">Certificate:</h1>
