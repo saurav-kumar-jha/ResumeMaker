@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 src/component/expresume/resume.jsx
+public/logo.PNG
+public/logo2.png
+src/component/expresume/ExpresumePage.jsx
+src/component/fresherResume/fresher.jsx

@@ -26,7 +26,9 @@ export const Login = ()=>{
   }
   return (
     <>
-    <NavLink to="/">Home</NavLink>
+    <div className="h-auto w-[100%] px-4 py-2 flex justify-left items-center bg-gray-100 text-[red] text-[18px] ">
+            <NavLink to="/">home</NavLink>
+         </div>
       <div className="flex justify-center items-center min-h-screen bg-gray-100">
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
           <h1 className="text-3xl font-semibold text-center text-gray-700 mb-6">Login</h1>

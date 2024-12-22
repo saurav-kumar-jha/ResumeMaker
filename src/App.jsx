@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import { Home } from './component/home'
-import { Login } from './component/login'
-import { Signup } from './component/singup'
 import { Resume } from './component/resume'
 import { Template } from './component/template'
 import { ExpInput } from './component/expresume/ExpresumePage'
 import { Fresher } from './component/fresherResume/fresher'
+import { Login } from './component/login/login'
+import { Signup } from './component/login/singup'
 
 const router = createBrowserRouter([
   {

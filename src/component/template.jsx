@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 
 
 export const Template = () => {
@@ -11,6 +11,9 @@ export const Template = () => {
     }
     return (
         <>
+         <div className="h-auto w-[100%] px-4 py-2 flex justify-left items-center text-[red] text-[18px] ">
+            <NavLink to="/">home</NavLink>
+         </div>
             <div>
                 <h1 className="text-6xl font-bold text-center textshadow">Choose one template for your resume.</h1>
                 <p className="text-xl text-red-600 font-medium mt-[15px] text-center ">Pick any one of them</p>

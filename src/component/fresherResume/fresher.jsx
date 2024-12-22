@@ -50,7 +50,10 @@ export const Fresher = () => {
     }
     return (
         <>
-         <NavLink to={"/"} className="text-[red] mx-5 " >Home/fresher</NavLink>
+         <div className="h-auto px-4 py-2 w-[100%] flex justify-left items-center text-[red] text-[18px] ">
+            <NavLink to="/" className="hover:text-blue-800" >home</NavLink>
+            <NavLink to="/temp" className="hover:text-blue-800"  >/template</NavLink>
+         </div>
             <h1 className="text-6xl font-bold text-center textshadow">Fresher resume form</h1>
             <p className="text-2xl font-bold text-red-700 text-center">Fill of fields</p>
             <section className="h-auto w-[60vw] mx-auto shadow-2xl  ">

@@ -1,8 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
 body{
     overflow-x: hidden;
+    font-family: "Cabin", serif;
 }
 .back{
     background-image: url("phot.jpg") ;
@@ -17,7 +20,11 @@ body{
 .textshadow{
     text-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
-
+#resume-content{
+  font-family: "Rubik", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+}
 .button {
     background: transparent;
     color: #000000;
