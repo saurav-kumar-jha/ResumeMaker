@@ -79,7 +79,7 @@ export const ExpInput = () => {
                 <NavLink to="/" className="hover:text-blue-800" >home</NavLink>
                 <NavLink to="/temp" className="hover:text-blue-800"  >/template</NavLink>
             </div>
-            <section className="h-auto w-[65vw] mx-auto shadow-2xl my-2 " >
+            <section className="h-auto md:w-[65vw] w-[77vw] mx-auto shadow-2xl my-2 " >
                 <h1 className="text-6xl font-bold text-center textshadow">Fresher resume form</h1>
                 <p className="text-2xl font-bold text-red-700 text-center">Fill of fields</p>
 
@@ -105,11 +105,11 @@ export const ExpInput = () => {
             </section>
 
 
-            <section className={`${show ? "block" : "hidden"} h-auto w-[65vw] mx-auto px-3 py-4  shadow-2xl `} >
+            <section className={`${show ? "block" : "hidden"}  `} >
                 <h1 className="text-center text-5xl font-semibold my-3" >Here your generator PDF</h1>
+                <p className="md:hidden block w-[90vw] mx-auto text-xl font-semibold text-red-500 ">{`Ignore this generated PDF view because it is sample. It is in A4 size when you download it..`} </p>
 
-
-                <div className="h-auto max-w-[800px] min-w-[680px] p-[20px] mx-auto html2pdf__page-break " id="resume-content">
+                <div className="h-auto  w-[80vw] md:w-[680px] p-[20px] mx-auto html2pdf__page-break " id="resume-content">
                     <h1 className="text-3xl font-bold text-center uppercase " >{info.name} </h1>
                     <div className="h-[2px] w-[90%] bg-gray-600 my-2 mx-auto "></div>
 

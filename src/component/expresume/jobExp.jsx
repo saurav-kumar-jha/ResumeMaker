@@ -57,16 +57,16 @@ export const Experience = ({ exp, setexp }) => {
                         exp.map((item, index) => (
                             <div key={index} className="flex flex-col ml-3">
                                 <label className="text-lg font-semibold mb-[-2px] mt-1 ">Company Name:-</label>
-                                <input type="text" name="companyName" value={item.companyName} onChange={(e) => handleInputChange(index, e)} placeholder="eg: Company-name" className="h-[40px] w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
+                                <input type="text" name="companyName" value={item.companyName} onChange={(e) => handleInputChange(index, e)} placeholder="eg: Company-name" className="h-[40px] w-[80%] md:w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
 
                                 <label className="text-lg font-semibold mb-[-2px] mt-1 ">Job position:-</label>
-                                <input type="text" name="position" value={item.position} onChange={(e) => handleInputChange(index, e)} placeholder="eg: Software-engineer" className="h-[40px] w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
+                                <input type="text" name="position" value={item.position} onChange={(e) => handleInputChange(index, e)} placeholder="eg: Software-engineer" className="h-[40px] w-[80%] md:w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
 
                                 <label className="text-lg font-semibold mb-[-2px] mt-1 ">Job location:-</label>
-                                <input type="text" name="location" value={item.location} onChange={(e) => handleInputChange(index, e)} placeholder="eg: Delhi" className="h-[40px] w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
+                                <input type="text" name="location" value={item.location} onChange={(e) => handleInputChange(index, e)} placeholder="eg: Delhi" className="h-[40px] w-[80%] md:w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
 
                                 <label className="text-lg font-semibold mb-[-2px] mt-1 ">Period Date:-</label>
-                                <input type="text" name="date" value={item.date} onChange={(e) => handleInputChange(index, e)} placeholder="eg: Dec 2022-Jan 2023" className="h-[40px] w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
+                                <input type="text" name="date" value={item.date} onChange={(e) => handleInputChange(index, e)} placeholder="eg: Dec 2022-Jan 2023" className="h-[40px] w-[80%] md:w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
 
                                 <div className="ml-3 mt-2">
                                     <label className="text-xl font-semibold">Key responsibilty:<Star /></label>
@@ -74,7 +74,7 @@ export const Experience = ({ exp, setexp }) => {
                                         {
                                             item.points.map((pitem, pindex) => (
                                                 <li key={pindex} className="my-1">
-                                                    <input type="text"  value={pitem} onChange={(e) => handlePointsChange(index, pindex, e)} className="h-[40px] w-[40%] px-3 py-2 border my-1 border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" placeholder="Key responsibility" required />
+                                                    <input type="text"  value={pitem} onChange={(e) => handlePointsChange(index, pindex, e)} className="h-[40px] w-[80%] md:w-[40%] px-3 py-2 border my-1 border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" placeholder="Key responsibility" required />
                                                     <button className="px-2 py-1 ml-2 bg-red-600 text-white rounded" onClick={(e) => removePoint(index, pindex, e)} > Remove </button>
 
                                                 </li>

@@ -87,3 +87,19 @@ body{
     transform: rotate(360deg);
   }
 }
+::-webkit-scrollbar{
+  width: 10px;
+  cursor: all-scroll;
+}
+::-webkit-scrollbar-track{
+  background-color: rgba(66, 66, 66, 0);
+  
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 9999px;
+  background-color: rgba(128, 128, 128, 0.829);
+ 
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: grey;
+}

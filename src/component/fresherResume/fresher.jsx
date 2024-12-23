@@ -56,7 +56,7 @@ export const Fresher = () => {
          </div>
             <h1 className="text-6xl font-bold text-center textshadow">Fresher resume form</h1>
             <p className="text-2xl font-bold text-red-700 text-center">Fill of fields</p>
-            <section className="h-auto w-[60vw] mx-auto shadow-2xl  ">
+            <section className="h-auto w-[80vw] md:w-[60vw] mx-auto shadow-2xl  ">
                 <form className="h-[100%] w-[98%] mx-auto py-3 " onSubmit={handlesubmit}>
 
                     <Profile info={info} setinfo={setinfo} />
@@ -81,7 +81,7 @@ export const Fresher = () => {
                     <hr className="h-[3px] my-2 bg-black w-[100%] rounded " />
                     <Certificate cer={cer} setcer={setcer} />
 
-                    <button className="h-auto w-[80%] mx-auto px-3 py-2 bg-blue-400 hover:bg-blue-500 font-bold text-lg border border-transparent text-white rounded-lg ">SUBMIT</button>
+                    <button className="h-auto w-[80%] ml-6 md:mx-auto px-3 py-2 bg-blue-400 hover:bg-blue-500 font-bold text-lg border border-transparent text-white rounded-lg ">SUBMIT</button>
                 </form>
             </section>
             {/* Here is part of resume .......................................... */}
@@ -89,7 +89,7 @@ export const Fresher = () => {
             
             <div className={`${show?"block":"hidden"}`} >
             <h1 className="text-center text-3xl font-semibold my-3" >Here your generator PDF</h1>
-            <div className="w-[600px] h-auto border border-black mx-auto  px-3 py-2 " >
+            <div className="md:w-[600px] w-[80vw] h-auto border border-black mx-auto  px-3 py-2 " >
                 <div className={`${show ? "block" : "hidden"} h-[auto] w-[99%]  mx-auto html2pdf__page-break `} id="resume-content" >
                     <div className="h-[auto] w-[100%] ">
                         <h1 className="font-bold text-4xl text-center uppercase ">{info.name} </h1>
@@ -194,7 +194,7 @@ export const Fresher = () => {
             {/* <Downbutton onClick={generatePDF} /> */}
             <div className="h-auto w-[600px] mx-auto my-5 ">
 
-            <button className="h-auto w-auto bg-slate-400 rounded-full border-transparent text-black font-semibold px-4 py-2 flex justify-center items-center " onClick={generatePDF}>{loading ? "Generating PDF..." : "DOWNLOAD"} </button>
+            <button className="h-auto w-auto bg-slate-400 rounded-full border-transparent text-black font-semibold md:m-0 ml-[5%] px-4 py-2 flex justify-center items-center " onClick={generatePDF}>{loading ? "Generating PDF..." : "DOWNLOAD"} </button>
             </div>
             </div>
         </>

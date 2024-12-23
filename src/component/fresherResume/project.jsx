@@ -64,19 +64,19 @@ export const Projects = ({project, setProject}) => {
           {project.map((item, index) => (
             <div key={index} className="flex flex-col gap-3">
               <div className="flex flex-wrap gap-2">
-                <input type="text" name="name" value={item.name} onChange={(e) => handleInputChange(index, e)} placeholder="eg: Project-name" className="h-[40px] w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
-                <input type="text" name="link" value={item.link} onChange={(e) => handleInputChange(index, e)} placeholder="eg: https:/your-project-link.com" className="h-[40px] w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
-                <input type="text" name="year" value={item.year} onChange={(e) => handleInputChange(index, e)} placeholder="eg: Oct 2023 - Nov 2023" className="h-[40px] w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
+                <input type="text" name="name" value={item.name} onChange={(e) => handleInputChange(index, e)} placeholder="eg: Project-name" className="h-[40px] w-[80%] md:w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
+                <input type="text" name="link" value={item.link} onChange={(e) => handleInputChange(index, e)} placeholder="eg: https:/your-project-link.com" className="h-[40px] w-[80%] md:w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
+                <input type="text" name="year" value={item.year} onChange={(e) => handleInputChange(index, e)} placeholder="eg: Oct 2023 - Nov 2023" className="h-[40px] w-[80%] md:w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" required />
                 
               </div>
 
               
               <div className="ml-3">
                 <label className="text-xl font-semibold">Project Points:<Star/></label>
-                <ul className="list-disc pl-6">
+                <ul className="md:list-disc pl-6">
                   {item.points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex items-center gap-2 my-2">
-                      <input type="text" value={point} onChange={(e) => handlePointsChange(index, pointIndex, e)} placeholder="Enter a point" className="h-[30px] w-[80%] px-3 py-1 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" />
+                    <li key={pointIndex} className="md:flex items-center gap-2 my-2">
+                      <input type="text" value={point} onChange={(e) => handlePointsChange(index, pointIndex, e)} placeholder="Enter a point" className="h-[30px] md:w-[80%] px-3 py-1 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" />
                       <button className="px-2 py-1 bg-red-600 text-white rounded" onClick={(e) => removePoint(index, pointIndex,e)} > Remove </button>
                     </li>
                   ))}

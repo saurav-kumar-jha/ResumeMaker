@@ -31,8 +31,8 @@ export const Skill = ({ skill, setskill }) => {
                     {
                         skill.map((item, index) => (
                             <div key={index} className="flex flex-wrap gap-2 ml-3">
-                                <input type="text" className="h-[40px] w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" placeholder="eg: Front-end" name="title" value={item.title} onChange={(e) => handleinputchange(index, e)} required />
-                                <input type="text" className="h-[40px] w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" name="skill" value={item.skill} onChange={(e) => handleinputchange(index, e)} placeholder="eg: HTML,CSS,JS" required />
+                                <input type="text" className="h-[40px] w-[80%] md:w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" placeholder="eg: Front-end" name="title" value={item.title} onChange={(e) => handleinputchange(index, e)} required />
+                                <input type="text" className="h-[40px] w-[80%] md:w-[40%] px-3 py-2 border border-gray-500 outline-none hover:border-black font-semibold text-lg rounded" name="skill" value={item.skill} onChange={(e) => handleinputchange(index, e)} placeholder="eg: HTML,CSS,JS" required />
                                 <button className="h-auto w-fit px-3 py-2 bg-red-600 border border-transparent cursor-pointer font-bold rounded-lg text-white " onClick={(e) => handleremove(index, e)}>Remove</button>
                             </div>
                         ))

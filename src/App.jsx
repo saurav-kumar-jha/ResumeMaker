@@ -6,7 +6,7 @@ import { Template } from './component/template'
 import { ExpInput } from './component/expresume/ExpresumePage'
 import { Fresher } from './component/fresherResume/fresher'
 import { Login } from './component/login/login'
-import { Signup } from './component/login/singup'
+import { Signup } from './component/login/signup'
 
 const router = createBrowserRouter([
   {
