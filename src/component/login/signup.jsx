@@ -1,6 +1,10 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
+import { auth ,db} from "../firebase";
+import {setDoc, doc} from "firebase/firestore"
+import { toast } from "react-toastify";
 
 
 export const Signup = ()=>{
@@ -9,10 +13,8 @@ export const Signup = ()=>{
     const [Show, setShow] = useState(false)
     const [email, setemail] = useState("")
     const [name, setname] = useState("")
-    const [Pass, setPass] = useState("")
     const [pass, setpass] = useState("")
     const [cpass, setcpass] = useState("")
-    const [error, seterror] = useState("")
     const [loading, setloading] = useState(false)
     const handlelogin = ()=>{
         navigate("/login")
@@ -23,15 +25,39 @@ export const Signup = ()=>{
     const handleShow = ()=>{
         setShow(!Show)
     }
-    const handlesubmit = (e)=>{
+    const handlesubmit = async (e)=>{
         e.preventDefault()
-        if(pass === cpass){
-          setPass(pass)
-        }else{
-          alert("please enter same password")
+        if(pass !== cpass){
+          toast.error("Password doesn't match.")
+          return;
+        }
+
+
+        setloading(true)
+        try {
+          await createUserWithEmailAndPassword(auth, email, pass)
+          const user = auth.currentUser 
+          if(user){
+            await setDoc(doc(db,"Users", user.uid),{
+              email:user.email,
+              name:name,
+              password:pass
+            })
+          }
+          setname("")
+          setemail("")
+          setpass("")
+          setcpass("")
+          setloading(false) 
+          toast.success("Loggin successfully")
+          navigate("/")       
+          
+        } catch (error) {
+          toast.error(error.message)
         }
         
     }
+    if(loading) return <h1>Loading....</h1>
     return (
         <>
         <div className="h-auto w-[100%] px-4 py-2 flex justify-left bg-gray-100 items-center  text-[red] text-[18px] ">
@@ -40,7 +66,7 @@ export const Signup = ()=>{
           <div className="flex justify-center items-center bg-gray-100 min-h-screen">
             <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
               <h1 className="text-4xl font-bold text-center mb-6">Sign Up</h1>
-              <form className="space-y-4">
+              <form className="space-y-4" >
                 <div>
                   <label htmlFor="name" className="block font-semibold text-xl">Name:</label>
                   <input type="text" id="name" value={name} onChange={(e)=> setname(e.target.value)} placeholder="Enter name" required className="mt-2 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"/>

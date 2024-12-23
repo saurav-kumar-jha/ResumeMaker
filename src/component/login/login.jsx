@@ -1,16 +1,44 @@
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { auth ,db} from "../firebase";
+import { toast } from "react-toastify";
 
 
 export const Login = ()=>{
   const [email, setemail] = useState("")
   const [pass, setpass] = useState("")
-  const [error, seterror] = useState("")
   const [loading, setloading] = useState(false)
-  const handleLogin = (e)=>{
+  const navigate = useNavigate()
+  const handleLogin = async (e)=>{
     e.preventDefault()
-    
+    setloading(true)
+    try {
+      await signInWithEmailAndPassword(auth, email, pass)
+      setloading(false)
+      toast.success("Logging successfully")
+      setTimeout(() => {
+        navigate("/") 
+        
+      }, 2000);
+    } catch (error) {
+      setloading(false)
+      console.log(error.code);
+      
+      if (error.code === "auth/user-not-found") {
+        toast.error("No user found with this email.");
+      } else if (error.code === "auth/wrong-password") {
+        toast.error("Incorrect password.");
+      } else if (error.code === "auth/invalid-credential"){
+        toast.error("You are not register")
+        navigate("/signup")
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    }
   }
+
+  if(loading) return <h1>Loading...</h1>
   return (
     <>
     <div className="h-auto w-[100%] px-4 py-2 flex justify-left items-center bg-gray-100 text-[red] text-[18px] ">

@@ -1,13 +1,30 @@
+import { useEffect, useState } from "react"
 import { NavLink, useNavigate } from "react-router-dom"
+import { auth } from "./firebase"
 
 
 export const Template = () => {
+    const [isuser, setisuser] = useState(null)
     const navigate = useNavigate()
+    useEffect(()=>{
+        auth.onAuthStateChanged(user=>{
+            setisuser(!!user)
+        })
+    },[])
     const handlefresher = ()=>{
-        navigate("/fresher")
+        if(isuser){
+
+            navigate("/fresher")
+        }else{
+            navigate("/signup")
+        }
     }
     const handleExp = ()=>{
-        navigate("/exp")
+        if(isuser){
+            navigate("/exp")
+        }else{
+            navigate("/signup")
+        }
     }
     return (
         <>
