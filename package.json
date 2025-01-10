@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.7.5",
+    "aos": "^2.3.4",
     "appwrite": "^16.0.2",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
@@ -19,6 +20,7 @@
     "html2canvas": "^1.4.1",
     "html2pdf.js": "^0.10.2",
     "jspdf": "^2.5.2",
+    "motion": "^11.17.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
