@@ -2,7 +2,7 @@ import { Bs1Circle, Bs2Circle, Bs3Circle, Bs4Circle } from "react-icons/bs"
 import { Container } from "./container"
 import { useNavigate } from "react-router-dom"
 import { Star } from "./fresherResume/star"
-import { BlurText } from "./animation/blurtext"
+import { BlurText } from "./animation/blurtext.jsx"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react"
