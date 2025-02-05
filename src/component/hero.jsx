@@ -2,7 +2,6 @@ import { Bs1Circle, Bs2Circle, Bs3Circle, Bs4Circle } from "react-icons/bs"
 import { Container } from "./container"
 import { useNavigate } from "react-router-dom"
 import { Star } from "./fresherResume/star"
-import { BlurText } from "./Animation/Blurtext"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react"
@@ -27,7 +26,7 @@ export const Hero = () => {
                 <div className="md:h-[70vh] w-[100%] py-12 my-4 px-6 ">
                     <div className="w-[95%] h-[100%] mx-auto block md:flex items-center justify-between">
                         <div className="md:w-[50%] py-6 mr-4  ">
-                            <BlurText className="md:text-6xl text-4xl font-bold flex justify-center items-center textshadow" data-aos="fade-up" text="AI Resume builder" delay={50}/>
+                            <h1 className="md:text-6xl text-4xl font-bold flex justify-center items-center textshadow" data-aos="fade-up">AI Resume builder</h1>
                             <h2 className="md:text-lg text-base font-medium mt-[15px] text-center ">Create a standout resume with our intuitive builder! Choose from sleek templates, customize effortlessly, and impress employers. Elevate your job search and land your dream job today!</h2>
                             <div className="flex items-center w-[100%] justify-center h-[50%] mt-5">
                                 <button className="button font-bold rounded-full text-xl " data-aos="fade-up-right" data-aos-delay="1000" onClick={handlecreate} >Create resume</button>
@@ -35,7 +34,7 @@ export const Hero = () => {
                         </div>
                         <div className="md:w-[50%] w-full h-[100%] mx-auto md:ml-4 " data-aos="fade-up-left" data-aos-duration="400" data-aos-delay="400">
                             <div className="md:h-[100%] h-[70vh] w-[70%] md:w-[58%] cursor-pointer rounded-2xl transition-all duration-300 back hover:scale-105 hover:z-50 mx-auto ">
-                                <img src="/Resume_Design_Templates_04-removebg-preview.png" alt=""  className="h-[100%] object-cover transition-all w-full duration-300 " />
+                                <img src="/Resume_Design_Templates_04-removebg-preview.png" alt=""  className="h-[100%] mx-auto object-cover transition-all w-[90%] duration-300 " />
                             </div>
                         </div>
                     </div>
