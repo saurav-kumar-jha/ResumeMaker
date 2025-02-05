@@ -32,7 +32,7 @@ export const Hero = () => {
                                 <button className="button font-bold rounded-full text-xl " data-aos="fade-up-right" data-aos-delay="1000" onClick={handlecreate} >Create resume</button>
                             </div>
                         </div>
-                        <div className="md:w-[50%] w-full h-[100%] mx-auto md:ml-4 " data-aos="fade-up-left" data-aos-duration="400" data-aos-delay="400">
+                        <div className="md:w-[50%] md:block hidden w-full h-[100%] mx-auto md:ml-4 " data-aos="fade-up-left" data-aos-duration="400" data-aos-delay="400">
                             <div className="md:h-[100%] h-[70vh] w-[70%] md:w-[58%] cursor-pointer rounded-2xl transition-all duration-300 back hover:scale-105 hover:z-50 mx-auto ">
                                 <img src="/Resume_Design_Templates_04-removebg-preview.png" alt=""  className="h-[100%] mx-auto object-cover transition-all w-[90%] duration-300 " />
                             </div>
