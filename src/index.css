@@ -8,7 +8,7 @@ body{
     /* overflow: hidden; */
 }
 .back{
-    background-image: url("src/assets/phot.jpg") ;
+    background-image: url("/phot.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
