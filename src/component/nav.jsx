@@ -68,7 +68,7 @@ export const Nav = () => {
 
     return (
         <>
-            <nav className="h-[80px] w-[100vw] border flex items-center shadow-xl py-auto px-4 bg-[#e4dede83] ">
+            <nav className="h-[80px] w-[100vw] flex items-center shadow-xl py-auto px-4 bg-[#e4dede83] ">
                 <div className=" w-[80%] h-[90%] flex justify-between mx-auto items-center ">
                     <div className="md:w-[60%] w-auto h-[100%] cursor-pointer" >
                         <img src="logo2.png" alt="" onClick={handleLogo} className="h-[100%] scale-150 w-fit bg-transparent " />

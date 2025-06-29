@@ -6,22 +6,24 @@ import 'aos/dist/aos.css';
 import { useEffect } from "react"
 import { Star_Ani } from "./Animation/star";
 import { ATSChecker } from "./ATS/atschecker";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
 
 export const Hero = () => {
     const navigate = useNavigate()
-    const handlecreate = ()=>{
+    const handlecreate = () => {
         navigate("/prompt")
     }
-    useEffect(()=>{
-        
-        const initAos = ()=>{
+    useEffect(() => {
+
+        const initAos = () => {
             AOS.init({
-                once:false,
-                offset:10
+                once: false,
+                offset: 10
             })
         }
         initAos()
-    },[])
+    }, [])
     return (
         <>
             <section className="h-auto w-[100vw] " data-aos="fade">
@@ -36,28 +38,56 @@ export const Hero = () => {
                         </div>
                         <div className="md:w-[50%] md:block hidden w-full h-[100%] mx-auto md:ml-4 " data-aos="fade-up-left" data-aos-duration="400" data-aos-delay="400">
                             <div className="md:h-[100%] h-[70vh] w-[70%] md:w-[58%] cursor-pointer rounded-2xl transition-all duration-300 back hover:scale-105 hover:z-50 mx-auto ">
-                                <img src="/Resume_Design_Templates_04-removebg-preview.png" alt=""  className="h-[100%] mx-auto object-cover transition-all w-[90%] duration-300 " />
+                                <img src="/Resume_Design_Templates_04-removebg-preview.png" alt="" className="h-[100%] mx-auto object-cover transition-all w-[90%] duration-300 " />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="h-auto w-[90%] mx-auto py-3  ">
-                    <h1 className="text-4xl md:text-7xl text-center textshadow font-semibold md:font-bold" data-aos="fade-up" data-aos-duration="300" data-aos-delay="500">Resume Templates for Every Career Path</h1>
-                    <h3 className="text-center text-base md:text-lg font-medium md:font-semibold" data-aos="fade-up-right" data-aos-duration="400" data-aos-delay="700" >You can pick one of our handcrafted resume templates above. Start building your resume in less than 5 seconds, using predefined sections approved by recruiters worldwide. Customize it to your own needs and personality and hit 'Download'. It's THAT easy to use, even if you've never made a resume before!</h3>
+                <div className="h-auto  w-[95%] max-w-screen-xl mx-auto py-6 px-2 sm:px-4">
+                    <h1
+                        className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-center textshadow font-semibold md:font-bold"
+                        data-aos="fade-up"
+                        data-aos-duration="300"
+                        data-aos-delay="500"
+                    >
+                        Resume Templates for Every Career Path
+                    </h1>
+                    <h3
+                        className="text-center text-sm sm:text-base md:text-lg font-medium md:font-semibold mt-2"
+                        data-aos="fade-up-right"
+                        data-aos-duration="400"
+                        data-aos-delay="700"
+                    >
+                        You can pick one of our handcrafted resume templates above. Start building your resume in less than 5 seconds,
+                        using predefined sections approved by recruiters worldwide. Customize it to your own needs and personality and hit
+                        'Download'. It's THAT easy to use, even if you've never made a resume before!
+                    </h3>
 
-                    <div className="md:h-[84vh] h-auto w-[90%] md:flex block justify-around my-4 ">
-                        <div className="text-center h-[90%] md:w-[35%] mx-auto " data-aos="fade-right" data-aos-delay="900" data-aos-duration="400" >
-                            <img src="/FresherResume1-EPEQXbIY.jpg" alt="" className="h-[100%] w-full cursor-pointer " />
-                            <h4 className="text-2xl font-bold text-blue-600 ">Fresher Resume Template</h4>
-                            <p className="text-base mt-[-5px] text-blue-400 ">No Experience No problem!</p>
-                        </div>
-                        <div className="text-center h-[90%] md:w-[38%]  " data-aos="fade-left" data-aos-delay="900" data-aos-duration="400">
-                            <img src="/ExpreinceResume1-CgXWjruW.png" alt="" className="h-[100%] w-full cursor-pointer " />
-                            <h4 className="text-2xl font-bold text-blue-600 ">Experienced Template</h4>
-                            <p className="text-base mt-[-5px] text-blue-400">Put your best foot forward with a professional resume template.</p>
-                        </div>
-                    </div>
+                    <Carousel   >
+                        <CarouselContent className="h-[auto] my-2 py-2 w-full flex items-center justify-center gap-6 py-6">
+                            <CarouselItem className=" w-full sm:w-[70%] md:w-[45%] lg:w-[30%] text-center md:basis-1/2 lg:basis-1/3 ">
+                                <img src="/FresherResume1.jpg" alt="Fresher Template" className=" w-full object-cover rounded-lg" />
+                                <h4 className="text-xl font-bold text-blue-600 mt-2">Fresher Resume Template</h4>
+                                <p className="text-sm text-blue-400 mt-[-2px]">No Experience No problem!</p>
+                            </CarouselItem>
+
+                            <CarouselItem className="w-full sm:w-[70%] md:w-[45%] lg:w-[30%] text-center md:basis-1/2 lg:basis-1/3">
+                                <img src="/ExpreinceResume1.png" alt="Experience Template" className="w-full object-cover rounded-lg" />
+                                <h4 className="text-xl font-bold text-blue-600 mt-2">Experience Resume Template</h4>
+                                <p className="text-sm text-blue-400 mt-[-2px]">Experience Required</p>
+                            </CarouselItem>
+
+                            <CarouselItem className="w-full sm:w-[70%] md:w-[45%] lg:w-[30%] text-center md:basis-1/2 lg:basis-1/3">
+                                <img src="/color-block-resume-blue.webp" alt="Microsoft Template" className="w-full object-cover rounded-lg" />
+                                <h4 className="text-xl font-bold text-blue-600 mt-2">Microsoft Resume Template</h4>
+                            </CarouselItem>
+                            
+                        </CarouselContent>
+                        <CarouselPrevious className="cursor-pointer" />
+                        <CarouselNext className="cursor-pointer" />
+                    </Carousel>
                 </div>
+
                 <div className="h-auto w-[100%] py-6 px-4  ">
                     <h1 className="text-4xl md:text-7xl text-center textshadow font-semibold md:font-bold" data-aos="fade-up" data-aos-delay="300" data-aos-duration="300" >Build Resume Faster and Easy.</h1>
                     <h3 className="text-center text-base md:text-lg font-medium md:font-semibold mt-6 " data-aos="fade" data-aos-delay="400" data-aos-duration="200" >Resume Builder is lightning fast. No software to download. No multi-part sign-up form. No long-winded tutorials. Just a straightforward process.</h3>
@@ -98,12 +128,12 @@ export const Hero = () => {
                 <div className="h-auto w-[100%] px-3 py-3 " data-aos="fade" data-aos-duratin="400" >
                     <h1 className="text-4xl md:text-7xl text-center textshadow font-semibold md:font-bold" data-aos="fade-down" data-aos-duration="400" data-aos-delay="400" >Why us?</h1>
                     <div className="h-auto w-[95%] md:w-[85%] mx-auto block md:flex md:flex-wrap gap-3 p-2 ">
-                        <Container para1={"Free use"} para2="Create your resume at free of cost" icon={<Star_Ani />} />                    
-                        <Container para1={"AI Resume"} para2="Create your resume with the help of AI and edit them." icon={<Star_Ani />} />                    
-                        <Container para1={"Creative and Professional Resume Templates"} para2="Whether it's a classic template or create with the help of AI."/>                    
-                        <Container para1={"Edit Your Resume in Real Time"} para2="See changes to your resume instantly as you edit." />                    
-                        <Container para1={"ATS-Friendly"} para2="Our templates are ATS-friendly, ensuring your resume gets noticed." />                    
-                        <Container para1={"No Hidden Fees"} para2="No surprise charges. Know upfront if you're using any premium features." />                                      
+                        <Container para1={"Free use"} para2="Create your resume at free of cost" icon={<Star_Ani />} />
+                        <Container para1={"AI Resume"} para2="Create your resume with the help of AI and edit them." icon={<Star_Ani />} />
+                        <Container para1={"Creative and Professional Resume Templates"} para2="Whether it's a classic template or create with the help of AI." />
+                        <Container para1={"Edit Your Resume in Real Time"} para2="See changes to your resume instantly as you edit." />
+                        <Container para1={"ATS-Friendly"} para2="Our templates are ATS-friendly, ensuring your resume gets noticed." />
+                        <Container para1={"No Hidden Fees"} para2="No surprise charges. Know upfront if you're using any premium features." />
                     </div>
                 </div>
             </section>
