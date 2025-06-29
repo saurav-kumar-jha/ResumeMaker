@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react"
-import { Star_Ani } from "./Animation/star";
+import { Star_Ani } from "../Animation/star";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 

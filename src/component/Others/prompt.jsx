@@ -9,9 +9,12 @@ export default function Prompt() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate()
-  const { setResumeData } = useResume()
+  const { setResumeData, isloggedIn } = useResume()
 
   const handleGenerate = async () => {
+    if(!isloggedIn){
+      navigate("/login")
+    }
     setLoading(true);
     try {
       const res = await generateResumeJson(prompt, setResumeData);

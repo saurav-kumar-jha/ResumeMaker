@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { auth, db } from "../firebase"
+// import { auth, db } from "./firebase"
 import { doc, getDoc } from "firebase/firestore"
 import { toast } from "react-toastify"
 import { FaUser, FaUserCircle } from "react-icons/fa"
 import axios from "axios"
+import { useResume } from "../Context/resumeContext"
+import { account } from "../AppWrite/appwriteConfig"
 
 
 const API = import.meta.env.VITE_APP_API_URL
@@ -13,58 +15,43 @@ const TOKEN = localStorage.getItem("token")
 export const Nav = () => {
     const [userDetail, setuserDetail] = useState(null)
     const navigate = useNavigate()
+    const { user, isloggedIn, setUser, setisLoggedIn } = useResume()
     const handleSignup = () => {
         navigate("/signup")
     }
     const handlelogin = async () => {
-        try {
-            if (TOKEN != null) {
-                const res = await axios.post(`${API}/valid-token`, {}, {
-                    headers: {
-                        "Authorization": `Bearer ${TOKEN}`,
-                        "Content-Type":"application/json"
-                    },
-                    withCredentials:true
-                })
-                console.log(res.data)
-            } else {
-                navigate("/login")
-            }
-        } catch (error) {
-            console.log(error.message);
-            navigate("/login")
-        }
-       
+        navigate("/login")       
     }
     const handleLogo = () => {
         navigate("/")
     }
+    useEffect(()=>{
+        const getUser = async()=>{
+            try{
+                const acc = await account.get();
+                if(acc.status){
+                    setisLoggedIn(true)
+                    setTimeout(() => {                        
+                        setUser({name:acc.name,email:acc.email})
+                    }, 2000);
+                }
+            }catch(e){
+                console.log(e);
+            }
+        }
+        getUser()
+    })
     const handlelogout = async () => {
         try {
-            await auth.signOut()
+            await account.deleteSessions()
             setuserDetail(null)
-            navigate("/")
+            setUser({name:'',email:''})
+            setisLoggedIn(false)
         } catch (error) {
             console.log(error.message);
         }
     }
-    // const fetchUserData = async () => {
-    //     auth.onAuthStateChanged(async (user) => {
-    //         console.log(user);
-    //         const docRef = doc(db, "Users", user.uid)
-    //         const docSnap = await getDoc(docRef)
-    //         if ((docSnap).exists()) {
-    //             setuserDetail((docSnap).data())
-
-    //         } else {
-    //             console.log("User not found..")
-    //         }
-    //     })
-    // }
-    // useEffect(() => {
-    //     fetchUserData()
-    // }, [])
-
+   
 
     return (
         <>
@@ -74,9 +61,9 @@ export const Nav = () => {
                         <img src="logo2.png" alt="" onClick={handleLogo} className="h-[100%] scale-150 w-fit bg-transparent " />
                     </div>
                     {
-                        userDetail ? (
+                        isloggedIn ? (
                             <div className="md:w-[35%] w-[auto] h-[100%] flex justify-around md:gap-0 gap-2 items-center">
-                                <p className="flex w-[fit] h-[100%] items-center  text-xl font-semibold "><span className="text-3xl mx-2 text-blue-500 cursor-pointer "><FaUserCircle /></span>{userDetail.name.toUpperCase()} </p>
+                                <p className="flex w-[fit] h-[100%] items-center  text-xl font-semibold "><span className="text-3xl mx-2 text-blue-500 cursor-pointer "><FaUserCircle /></span>{user.name.toUpperCase() || "User"} </p>
                                 <div>
                                     <button onClick={handlelogout} className="h-[auto] w-auto px-6 py-1 bg-[#ff0015b6] text-lg font-semibold outline-none hover:scale-105 duration-150 ml-4 text-white cursor-pointer shadow-2xl  ">Logout</button>
                                 </div>

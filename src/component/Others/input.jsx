@@ -1,13 +1,13 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp, CircleCheckBig, SquarePlus } from "lucide-react";
-import { ShowResume } from "../ShowResume";
 import { Star_Ani } from "../Animation/star";
-import TemplateSelector from "../TemplateSelector";
+import TemplateSelector from "./TemplateSelector";
 import { useResume } from "../Context/resumeContext";
 import { MicrosoftResume } from "../Resume/microsoftResume";
 import { FresherResume } from "../Resume/fresherResume";
 import { ExperienceResume } from "../Resume/experienceResume";
+import { ShowResume } from "./ShowResume";
 
 
 export const TrailInput = () => {
@@ -27,7 +27,14 @@ export const TrailInput = () => {
     const [resumeShow, setresumeShow] = useState(false)
     const [sections, setSections] = useState({ Profile: true, About: true, SocialLinks: true, Skills: true, Education: true, Project: false, Certificate: false, Achievement: false, Language: false, Interest: false, Refrence: false, });
     const [templateId, setTemplateId] = useState("");
+    const { isloggedIn } = useResume()
+    const navigate = useNavigate()
 
+    useEffect(()=>{
+        if(!isloggedIn){
+            navigate("/login")
+        }
+    },[])
 
 
     const handleinfochange = (e) => {

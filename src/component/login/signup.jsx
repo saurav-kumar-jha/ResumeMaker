@@ -6,6 +6,9 @@ import { auth, db } from "../firebase";
 import { setDoc, doc } from "firebase/firestore"
 import { toast } from "react-toastify";
 import axios from "axios";
+import { useResume } from "../Context/resumeContext";
+import { account } from "../AppWrite/appwriteConfig";
+import { ID } from "appwrite";
 
 const API = import.meta.env.VITE_APP_API_URL
 
@@ -16,10 +19,11 @@ export const Signup = () => {
   const [Show, setShow] = useState(false)
   const [email, setemail] = useState("")
   const [name, setname] = useState("")
-  const [pass, setpass] = useState("")
+  const [password, setpassword] = useState("")
   const [cpass, setcpass] = useState("")
   const [loading, setloading] = useState(false)
   const [error, seterror] = useState()
+  const { user, setUser}= useResume()
   const handlelogin = () => {
     navigate("/login")
   }
@@ -31,40 +35,21 @@ export const Signup = () => {
   }
   const handlesubmit = async (e) => {
     e.preventDefault()
-    if (pass !== cpass) {
+    if (password !== cpass) {
       toast.error("Password doesn't match.")
       return;
     }
-
-
     setloading(true)
     try {
-      // await createUserWithEmailAndPassword(auth, email, pass)
-      // const user = auth.currentUser 
-      // if(user){
-      //   await setDoc(doc(db,"Users", user.uid),{
-      //     email:user.email,
-      //     name:name,
-      //     password:pass
-      //   })
-      // }
-      const res = await axios.post(`${API}/register`, {
-        name,
-        email,
-        password: pass
-      })
-      // console.log(res.data)
-      if (res.data.code == 200) {
-        setname("")
-        setemail("")
-        setpass("")
-        setcpass("")
-        setloading(false)
-        toast.success(res.data.msg)
-        navigate("/")
+     
+      const res = await account.create(ID.unique(),email,password,name)
+      console.log(res);
+      if(res.status){
+        navigate("/login")
       }else{
-        seterror(res.data.msg)
+        alert("Registration unsuccessfull")
       }
+      
 
     } catch (err) {
       toast.error(error)
@@ -94,7 +79,7 @@ export const Signup = () => {
             <div>
               <label htmlFor="pass" className="block font-semibold text-xl">Password:</label>
               <div className="mt-2 flex w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <input type={show ? "text" : "password"} id="pass" value={pass} onChange={(e) => setpass(e.target.value)} placeholder="Enter password" required className="w-[80%] px-4 py-2 border border-transparent rounded-md shadow-sm font-semibold focus:outline-none" /><span onClick={handleshow} className="w-[20%] h-[100%] px-4 flex justify-end text-xl py-2 cursor-pointer ">{show ? <FaEye /> : <FaEyeSlash />}</span>
+                <input type={show ? "text" : "password"} id="password" value={password} onChange={(e) => setpassword(e.target.value)} placeholder="Enter password" required className="w-[80%] px-4 py-2 border border-transparent rounded-md shadow-sm font-semibold focus:outline-none" /><span onClick={handleshow} className="w-[20%] h-[100%] px-4 flex justify-end text-xl py-2 cursor-pointer ">{show ? <FaEye /> : <FaEyeSlash />}</span>
               </div>
             </div>
 

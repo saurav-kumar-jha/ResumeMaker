@@ -16,7 +16,7 @@
     "@react-spring/web": "^9.7.5",
     "@tailwindcss/vite": "^4.1.11",
     "aos": "^2.3.4",
-    "appwrite": "^16.0.2",
+    "appwrite": "^16.1.0",
     "axios": "^1.8.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
