@@ -8,7 +8,7 @@ A modern, responsive, AI-assisted resume builder where users can either **manual
 
 - 🎨 Multiple Resume Templates (Fresher, Experienced, Microsoft-style)
 - 🤖 AI-Powered Auto Resume Generator (Spring Boot + Spring AI integration)
-- 📄 Download as PDF with `html2pdf`
+- 📄 Download as PDF with `reactToPrint` and `window.print`
 - 🧩 Drag-and-drop sections (if added)
 - 🌓 Dark Mode Ready (ShadCN UI)
 - ⚡ Built with **React + Vite** for ultra-fast performance
