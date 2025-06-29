@@ -21,7 +21,7 @@ A modern, responsive, AI-assisted resume builder where users can either **manual
 
 | Manual Editor Page | AI Prompt Page | Resume Preview |
 |--------------------|----------------|----------------|
-| ![Manual](./screenshots/manual.png) | ![Prompt](./screenshots/prompt.png) | ![Preview](./screenshots/preview.png) |
+| ![Manual](./screenshots/Home.JPG) | ![Prompt](./screenshots/prompt.JPG) | ![Preview](./screenshots/input_field.JPG) |
 
 ---
 
