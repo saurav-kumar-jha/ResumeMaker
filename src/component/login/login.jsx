@@ -3,38 +3,48 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { auth ,db} from "../firebase";
 import { toast } from "react-toastify";
+import axios from "axios";
 
+const API = import.meta.env.VITE_APP_API_URL
 
 export const Login = ()=>{
   const [email, setemail] = useState("")
   const [pass, setpass] = useState("")
   const [loading, setloading] = useState(false)
+  const [error, seterror]= useState()
   const navigate = useNavigate()
+
+
   const handleLogin = async (e)=>{
     e.preventDefault()
     setloading(true)
+ 
+
+
     try {
-      await signInWithEmailAndPassword(auth, email, pass)
+      const res = await axios.post(`${API}/login`,{
+        email,
+        password:pass
+      })
+      console.log(res.data)
       setloading(false)
-      toast.success("Logging successfully")
-      setTimeout(() => {
-        navigate("/") 
-        
-      }, 2000);
-    } catch (error) {
-      setloading(false)
-      console.log(error.code);
-      
-      if (error.code === "auth/user-not-found") {
-        toast.error("No user found with this email.");
-      } else if (error.code === "auth/wrong-password") {
-        toast.error("Incorrect password.");
-      } else if (error.code === "auth/invalid-credential"){
-        toast.error("You are not register")
-        navigate("/signup")
-      } else {
-        toast.error("Something went wrong. Please try again.");
+      if(res.data.code == 200){
+        toast.success(res.data.msg)
+        setemail("")
+        setpass("")
+        setTimeout(() => {
+          navigate("/")           
+        }, 2000);
+        localStorage.setItem("token",res.data.token)
+        localStorage.setItem("user_email",res.data.data.email)
+        localStorage.setItem("user_name",res.data.data.name)
+      }else{
+        seterror(res.data.msg)
       }
+      
+    } catch (err) {
+      setloading(false)
+      toast.error(error)
     }
   }
 

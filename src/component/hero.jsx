@@ -1,17 +1,19 @@
 import { Bs1Circle, Bs2Circle, Bs3Circle, Bs4Circle } from "react-icons/bs"
 import { Container } from "./container"
 import { useNavigate } from "react-router-dom"
-import { Star } from "./fresherResume/star"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react"
+import { Star_Ani } from "./Animation/star";
+import { ATSChecker } from "./ATS/atschecker";
 
 export const Hero = () => {
     const navigate = useNavigate()
     const handlecreate = ()=>{
-        navigate("/temp")
+        navigate("/prompt")
     }
     useEffect(()=>{
+        
         const initAos = ()=>{
             AOS.init({
                 once:false,
@@ -96,12 +98,12 @@ export const Hero = () => {
                 <div className="h-auto w-[100%] px-3 py-3 " data-aos="fade" data-aos-duratin="400" >
                     <h1 className="text-4xl md:text-7xl text-center textshadow font-semibold md:font-bold" data-aos="fade-down" data-aos-duration="400" data-aos-delay="400" >Why us?</h1>
                     <div className="h-auto w-[95%] md:w-[85%] mx-auto block md:flex md:flex-wrap gap-3 p-2 ">
-                        <Container para1={"Free use"} para2="Create your resume at free of cost" icon={<Star />} />                    
-                        <Container para1={"Creative and Professional Resume Templates"} para2="Whether it's a classic template or something more unique, we have what you need!"/>                    
+                        <Container para1={"Free use"} para2="Create your resume at free of cost" icon={<Star_Ani />} />                    
+                        <Container para1={"AI Resume"} para2="Create your resume with the help of AI and edit them." icon={<Star_Ani />} />                    
+                        <Container para1={"Creative and Professional Resume Templates"} para2="Whether it's a classic template or create with the help of AI."/>                    
                         <Container para1={"Edit Your Resume in Real Time"} para2="See changes to your resume instantly as you edit." />                    
                         <Container para1={"ATS-Friendly"} para2="Our templates are ATS-friendly, ensuring your resume gets noticed." />                    
-                        <Container para1={"No Hidden Fees"} para2="No surprise charges. Know upfront if you're using any premium features." />                    
-                        <Container para1={"Free to download"} para2="Download free without any fees." />                    
+                        <Container para1={"No Hidden Fees"} para2="No surprise charges. Know upfront if you're using any premium features." />                                      
                     </div>
                 </div>
             </section>

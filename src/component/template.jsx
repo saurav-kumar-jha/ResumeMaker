@@ -9,7 +9,7 @@ export const Template = () => {
     const navigate = useNavigate()
     useEffect(()=>{
         auth.onAuthStateChanged(user=>{
-            setisuser(!!user)
+            setisuser(user)
         })
         const initAos = ()=>{
             Aos.init({
@@ -21,19 +21,21 @@ export const Template = () => {
         initAos()
     },[])
     const handlefresher = ()=>{
-        if(isuser){
+        // if(isuser){
 
-            navigate("/fresher")
-        }else{
-            navigate("/signup")
-        }
+        //     navigate("/fresher")
+        // }else{
+        //     navigate("/signup")
+        // }
+        navigate("/form")
     }
     const handleExp = ()=>{
-        if(isuser){
-            navigate("/exp")
-        }else{
-            navigate("/signup")
-        }
+        // if(isuser){
+        //     navigate("/exp")
+        // }else{
+        //     navigate("/signup")
+        // }
+        navigate("/form")
     }
     return (
         <>
