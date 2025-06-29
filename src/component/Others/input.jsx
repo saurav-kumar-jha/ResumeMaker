@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp, CircleCheckBig, SquarePlus } from "lucide-react";
-import { ShowResume } from "./ShowResume";
-import { Star_Ani } from "./Animation/star";
-import TemplateSelector from "./TemplateSelector";
-import { useResume } from "./Context/resumeContext";
-import { MicrosoftResume } from "./Resume/microsoftResume";
-import { FresherResume } from "./Resume/fresherResume";
-import { ExperienceResume } from "./Resume/experienceResume";
+import { ShowResume } from "../ShowResume";
+import { Star_Ani } from "../Animation/star";
+import TemplateSelector from "../TemplateSelector";
+import { useResume } from "../Context/resumeContext";
+import { MicrosoftResume } from "../Resume/microsoftResume";
+import { FresherResume } from "../Resume/fresherResume";
+import { ExperienceResume } from "../Resume/experienceResume";
 
 
 export const TrailInput = () => {

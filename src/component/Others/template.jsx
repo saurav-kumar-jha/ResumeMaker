@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { NavLink, useNavigate } from "react-router-dom"
-import { auth } from "./firebase"
+import { auth } from "../firebase"
 import Aos from "aos"
 
 

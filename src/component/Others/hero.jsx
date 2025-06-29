@@ -5,7 +5,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react"
 import { Star_Ani } from "./Animation/star";
-import { ATSChecker } from "./ATS/atschecker";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 
@@ -44,27 +43,11 @@ export const Hero = () => {
                     </div>
                 </div>
                 <div className="h-auto  w-[95%] max-w-screen-xl mx-auto py-6 px-2 sm:px-4">
-                    <h1
-                        className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-center textshadow font-semibold md:font-bold"
-                        data-aos="fade-up"
-                        data-aos-duration="300"
-                        data-aos-delay="500"
-                    >
-                        Resume Templates for Every Career Path
-                    </h1>
-                    <h3
-                        className="text-center text-sm sm:text-base md:text-lg font-medium md:font-semibold mt-2"
-                        data-aos="fade-up-right"
-                        data-aos-duration="400"
-                        data-aos-delay="700"
-                    >
-                        You can pick one of our handcrafted resume templates above. Start building your resume in less than 5 seconds,
-                        using predefined sections approved by recruiters worldwide. Customize it to your own needs and personality and hit
-                        'Download'. It's THAT easy to use, even if you've never made a resume before!
-                    </h3>
+                    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-center textshadow font-semibold md:font-bold" data-aos="fade-up" data-aos-duration="300" data-aos-delay="500" > Resume Templates for Every Career Path </h1>
+                    <h3 className="text-center text-sm sm:text-base md:text-lg font-medium md:font-semibold mt-2" data-aos="fade-up-right" data-aos-duration="400" data-aos-delay="700" > You can pick one of our handcrafted resume templates above. Start building your resume in less than 5 seconds, using predefined sections approved by recruiters worldwide. Customize it to your own needs and personality and hit 'Download'. It's THAT easy to use, even if you've never made a resume before! </h3>
 
                     <Carousel   >
-                        <CarouselContent className="h-[auto] my-2 py-2 w-full flex items-center justify-center gap-6 py-6">
+                        <CarouselContent className="h-[auto] my-2 w-full flex items-center justify-center gap-6 py-6">
                             <CarouselItem className=" w-full sm:w-[70%] md:w-[45%] lg:w-[30%] text-center md:basis-1/2 lg:basis-1/3 ">
                                 <img src="/FresherResume1.jpg" alt="Fresher Template" className=" w-full object-cover rounded-lg" />
                                 <h4 className="text-xl font-bold text-blue-600 mt-2">Fresher Resume Template</h4>
@@ -81,7 +64,7 @@ export const Hero = () => {
                                 <img src="/color-block-resume-blue.webp" alt="Microsoft Template" className="w-full object-cover rounded-lg" />
                                 <h4 className="text-xl font-bold text-blue-600 mt-2">Microsoft Resume Template</h4>
                             </CarouselItem>
-                            
+
                         </CarouselContent>
                         <CarouselPrevious className="cursor-pointer" />
                         <CarouselNext className="cursor-pointer" />

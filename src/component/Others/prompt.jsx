@@ -1,8 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { generateResumeJson } from "./AI/generatedJson";
-import { useResume } from "./Context/resumeContext";
+import { generateResumeJson } from "../AI/generatedJson";
+import { useResume } from "../Context/resumeContext";
 
 export default function Prompt() {
   const [prompt, setPrompt] = useState("");

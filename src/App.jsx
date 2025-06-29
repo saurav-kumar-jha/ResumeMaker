@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
-import { Home } from './component/home'
-import { Resume } from './component/resume'
-import { Template } from './component/template'
+import { Home } from './component/Others/home'
+import { Resume } from './component/Others/resume'
+import { Template } from './component/Others/template'
 import { Login } from './component/login/login'
 import { Signup } from './component/login/signup'
-import Prompt from './component/prompt'
-import { TrailInput } from './component/input'
+import Prompt from './component/Others/prompt'
+import { TrailInput } from './component/Others/input'
 
 const router = createBrowserRouter([
   {
