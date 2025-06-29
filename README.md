@@ -40,4 +40,3 @@ A modern, responsive, AI-assisted resume builder where users can either **manual
 
 ---
 
-## 📂 Project Structure (Frontend)
