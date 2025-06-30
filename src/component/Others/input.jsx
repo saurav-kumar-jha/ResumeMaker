@@ -11,11 +11,11 @@ import { ShowResume } from "./ShowResume";
 
 
 export const TrailInput = () => {
-    const { resumeData } = useResume()
-    const [info, setinfo] = useState({ name: '', email: '', mob: '' })
-    const [about, setabout] = useState("")
-    const [links, setlinks] = useState([{ plateform: '', url: '' }])
-    const [skills, setskills] = useState([{ title: '', skill: '' }])
+    const { resumeData } = useResume();
+    const [info, setinfo] = useState({ name: '', email: '', mob: '' });
+    const [about, setabout] = useState("");
+    const [links, setlinks] = useState([{ plateform: '', url: '' }]);
+    const [skills, setskills] = useState([{ title: '', skill: '' }]);
     const [education, seteducation] = useState([{ clg: '', year: '', title: '' }])
     const [project, setProject] = useState([{ name: '', link: '', year: '', points: [''] }]);
     const [cer, setcer] = useState([{ name: '', org: '', year: '' }])
@@ -35,7 +35,6 @@ export const TrailInput = () => {
             navigate("/login")
         }
     },[])
-
 
     const handleinfochange = (e) => {
         const { name, value } = e.target
@@ -281,8 +280,9 @@ export const TrailInput = () => {
     }
     const handlesubmit = (e) => {
         e.preventDefault()
-        // if(info.name.length < 1 || info.email.length < 1 || info.mob.length < 1 || about.length < 1 || links.plateform.length < 1 || links.url.length < 1){console.error("Invalid"); return;} 
-        alert("Check all the details, template and section.")
+        if(templateId == ""){
+            alert("Select template!")
+        }
         setresumeShow(true)
     }
     const toggleSection = (key) => {
@@ -311,7 +311,6 @@ export const TrailInput = () => {
                 return (<ShowResume resumeShow={resumeShow} info={info} about={about} links={links} skills={skills} education={education} project={project} cer={cer} achievements={achievements} languages={languages} interests={interests} references={references} section={sections} />);
         }
     }
-
     useEffect(() => {
         if (resumeData) {
             setinfo(resumeData.info || { name: "", email: "", mob: "" });
@@ -332,7 +331,6 @@ export const TrailInput = () => {
     }
     return (
         <>
-
             <h1 className="text-4xl sm:text-5xl font-extrabold text-center mb-2 textshadow">Fresher Resume Form</h1>
             <p className="text-lg sm:text-2xl font-semibold text-red-700 text-center mb-6">Fill in all fields carefully</p>
             <div className="w-full sm:py-4 sm:px-4 sm:flex sm:gap-6 overflow-hidden " >

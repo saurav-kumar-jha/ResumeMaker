@@ -1,16 +1,29 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { useReactToPrint } from "react-to-print"
+import { useResume } from "../Context/resumeContext"
 
 
 export const MicrosoftResume = ({ resumeShow, info, about, links, skills, education, project, cer, achievements, languages, interests, references, section }) => {
 
     const [loading, setloading]= useState(false)
     const resume_content = useRef()
-
-    const generatePDF = useReactToPrint({
+    const { isloggedIn } = useResume()
+    const navigate = useNavigate()
+    
+    const printResume = useReactToPrint({
         contentRef:resume_content,
         documentTitle:`${info.name}`
     })
+
+    const generatePDF = ()=>{
+        if(!isloggedIn){
+            navigate("/login")
+            return;
+        }
+        printResume()
+    }
+
     return (
         <>
             <div className="w-[100%] h-auto flex text-black font-sans" ref={resume_content} id="resume-content">
@@ -135,7 +148,7 @@ export const MicrosoftResume = ({ resumeShow, info, about, links, skills, educat
                 </div>
             </div>
              <div className="h-auto w-[600px] mx-auto my-5 ">
-                <button className="h-auto w-auto bg-slate-400 rounded-full border-transparent text-black font-semibold md:m-0 ml-[5%] px-4 py-2 flex justify-center items-center " onClick={generatePDF}>{loading ? "Generating...":"DOWNLOAD"} </button>
+                <button className="h-auto w-auto bg-slate-400 rounded-full border-transparent cursor-pointer text-black font-semibold md:m-0 ml-[5%] px-4 py-2 flex justify-center items-center " onClick={generatePDF}>{loading ? "Generating...":"DOWNLOAD"} </button>
             </div>
         </>
     )

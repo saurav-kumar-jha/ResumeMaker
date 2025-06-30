@@ -4,7 +4,7 @@ const templates = [
     { id: "template1", img: "/FresherResume1.jpg" },
     { id: "template2", img: "/color-block-resume-blue.webp" },
     { id: "template3", img: "/ExpreinceResume1.png" },
-    { id: "template4", img: "/Resume_Design_Templates_04.png" },
+    { id: "template4", img: "/Simple-Resume.webp" },
 ];
 
 const TemplateSelector = ({ onSelect }) => {

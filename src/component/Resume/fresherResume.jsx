@@ -1,15 +1,27 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useReactToPrint } from "react-to-print"
+import { useResume } from "../Context/resumeContext"
+import { useNavigate } from "react-router-dom"
 
 
 export const FresherResume = ({ resumeShow, info, about, links, skills, education, project, cer, achievements, languages, interests, references, section }) => {
     const [loading, setloading]= useState(false)
     const resume_content = useRef()
-
-    const generatePDF = useReactToPrint({
+    const { isloggedIn } = useResume()
+    const navigate = useNavigate()
+    
+    const printResume = useReactToPrint({
         contentRef:resume_content,
         documentTitle:`${info.name}`
     })
+
+    const generatePDF = ()=>{
+        if(!isloggedIn){
+            navigate("/login")
+            return;
+        }
+        printResume()
+    }
 
     return (
         <>
@@ -191,7 +203,7 @@ export const FresherResume = ({ resumeShow, info, about, links, skills, educatio
             </div>
 
             <div className="h-auto w-[600px] mx-auto my-5 ">
-                <button className="h-auto w-auto bg-slate-400 rounded-full border-transparent text-black font-semibold md:m-0 ml-[5%] px-4 py-2 flex justify-center items-center " onClick={generatePDF}>{loading ? "Generating...":"DOWNLOAD"} </button>
+                <button className="h-auto w-auto bg-slate-400 rounded-full border-transparent cursor-pointer text-black font-semibold md:m-0 ml-[5%] px-4 py-2 flex justify-center items-center " onClick={generatePDF}>{loading ? "Generating...":"DOWNLOAD"} </button>
             </div>
         </>
     )
